@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+
+    <style>
+        .p1 {
+            font-size: 1.5em;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .p1::first-line {
+            font-family: "Segoe Script", cursive;
+            color: rebeccapurple;
+            font-size: 2em;
+        }
+
+        .p2 {
+            font-size: 1.5em;
+        }
+
+        .p2::first-letter {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: darkred;
+            border: dashed darkred 1px;
+            padding: 5px;
+            font-size: 3em;
+        }
+
+        .p3::selection {
+            background-color: brown;
+            color: white;
+        }
+
+        p:last-child {
+            background-color: lightcoral;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: darkred;
+            padding: 1.3em;
+        }
+
+        p:first-child {
+            background-color: lightblue;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: darkblue;
+            padding: 2em;
+        }
+
+        p:nth-child(even) {
+            background-color: lightgreen;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: darkgreen;
+            padding: 1.5em;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 0.5em;
+        }
+
+        tr:nth-child(even) {
+            background-color: lightgray;
+        }
+
+        tr:nth-child(odd),
+        th:nth-last-child(odd) {
+            background-color: #f4f4f4;
+        }
+
+        p:only-child {
+            background-color: lightyellow;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: goldenrod;
+            padding: 1.4em;
+        }
+
+        p:only-child(2n) {
+            background-color: lightpink;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: deeppink;
+            padding: 1.4em;
+        }
+
+        p:nth-of-type(2n) {
+            background-color: lightcyan;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: cyan;
+            padding: 1.4em;
+        }
+
+        .menu-item:not(:last-child) {
+            border-bottom: 1px solid black;
+            margin-bottom: 10px;
+        }
+
+        #news {
+            display: block;
+            background-color: lightgray;
+            padding: 1.5em;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: black;
+        }
+
+        #news:target {
+            display: block;
+            background-color: lightcoral;
+            color: white;
+            border: 2px dotted darkred;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul class="menu">
+        <li class="menu-item">Menu Item 1</li>
+        <li class="menu-item">Menu Item 2</li>
+        <li class="menu-item">Menu Item 3</li>
+        <li class="menu-item">Menu Item 4</li>
+    </ul>
+
+    <a href="#news">Read news</a>
+
+    <article id="news">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis eligendi laudantium quasi!
+        Nihil eum itaque quibusdam ab qui suscipit et inventore amet cupiditate delectus error fuga quae quod quia animi
+        sit accusantium, quasi ullam tempore corrupti mollitia. Tempora distinctio dolorem exercitationem sequi, natus
+        eligendi corporis dolorum, quisquam tempore molestiae totam voluptatibus voluptates fugiat magnam vero dicta
+        soluta. Voluptatum ullam delectus accusamus praesentium reprehenderit! Tempore earum cumque, id, architecto
+        voluptas distinctio possimus recusandae, fugit deserunt asperiores porro sit necessitatibus?</article>
+
+    <!--<div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt amet suscipit dolor obcaecati saepe?</p>
+
+        <img src="../resorsesforall/LandscapePainting.webp" alt="Painting" height="200" width="300">
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad obcaecati, illum libero necessitatibus suscipit quo non!</p>
+
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, cumque?</p>
+        </div>
+    </div>
+
+     <table>
+        <tr>
+            <th>header 1</th>
+            <th>header 2</th>
+            <th>header 3</th>
+            <th>header 4</th>
+        </tr>
+
+        <tr>
+            <td>data 1</td>
+            <td>data 2</td>
+            <td>data 3</td>
+            <td>data 4</td>
+        </tr>
+
+        <tr>
+            <td>data 1</td>
+            <td>data 2</td>
+            <td>data 3</td>
+            <td>data 4</td>
+        </tr>
+
+        <tr>
+            <td>data 1</td>
+            <td>data 2</td>
+            <td>data 3</td>
+            <td>data 4</td>
+        </tr>
+
+        <tr>
+            <td>data 1</td>
+            <td>data 2</td>
+            <td>data 3</td>
+            <td>data 4</td>
+        </tr>
+    </table>
+
+ <p class="p1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi officia adipisci tempora molestias
+        possimus voluptatem reiciendis minima sint ex nihil, magni ratione maiores dolor corrupti quasi, amet iusto!
+        Nesciunt cupiditate doloremque provident reprehenderit porro similique voluptate nobis nam commodi ratione
+        facilis, adipisci aliquid! Ipsam magni est, facilis quisquam omnis, quam earum repudiandae fugit quasi aliquam
+        assumenda quibusdam sapiente vero qui corporis accusamus voluptas veritatis sit! Culpa debitis laborum, deleniti
+        mollitia facere numquam corrupti alias ullam illo saepe nesciunt ut reprehenderit eveniet, aspernatur magnam
+        esse dolores nihil labore id dignissimos facilis consectetur temporibus provident. Suscipit maiores numquam non
+        alias aspernatur. Ab exercitationem error possimus nulla in, itaque quidem non enim fuga, quibusdam velit dolore
+        ad minima nesciunt, suscipit rem perferendis? Totam minus officiis aperiam ea at placeat exercitationem nemo
+        quos repudiandae eius. Quibusdam omnis libero atque. Officia, autem reprehenderit natus quia rem architecto
+        vitae nostrum sunt iusto totam laboriosam illo facere explicabo corporis quae consequatur vel minima. Beatae,
+        cumque? Cum expedita voluptate mollitia sequi, provident libero voluptas ullam temporibus molestiae natus minus
+        iure tenetur accusamus ex. Maxime facere, ab molestias explicabo totam labore maiores dolorum accusamus placeat
+        optio dicta adipisci ipsa tempora, voluptas voluptatum recusandae voluptates saepe ad! Neque, natus quas?</p>
+
+    <p class="p2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio cupiditate eum dolor vel odio maiores
+        unde. Sit temporibus et porro, atque explicabo voluptate accusamus provident cumque placeat magnam veritatis
+        maxime laudantium dolor dolore nisi eveniet vitae cupiditate eaque quos eius! Ad similique sunt quis.
+        Consectetur similique possimus sapiente perspiciatis accusamus repellat reiciendis id harum illum! Quaerat quod
+        blanditiis impedit nostrum, pariatur rerum eligendi maiores consequuntur, culpa voluptatibus unde dolore
+        accusamus commodi perferendis dicta, possimus praesentium exercitationem. Temporibus mollitia placeat at. Ipsam
+        ducimus id provident ratione, exercitationem temporibus deserunt debitis, enim soluta quis ut ullam, ea sint
+        dicta? Soluta, maxime ullam? Placeat, nisi quidem ipsa mollitia dolore at labore similique temporibus quasi
+        accusamus ad eveniet sequi numquam officia nam quibusdam, modi veritatis laudantium consequatur? Quos, facilis
+        est minus in tenetur amet quibusdam quas delectus saepe? Aliquam illum tenetur expedita voluptatem, at quibusdam
+        magni laborum, autem cum quis inventore blanditiis non impedit.</p>
+
+    <p class="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, aliquam?</p>
+
+
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia velit neque labore perspiciatis placeat
+            aliquam nesciunt harum excepturi exercitationem voluptatum quisquam, corporis architecto!</p>
+    </div>
+
+
+    <div class="div1">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa excepturi eum corrupti nisi inventore quia
+            magni, est natus quibusdam sapiente sunt laborum dolor praesentium vel laudantium ipsam nemo molestiae
+            architecto.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, cumque?</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur magni incidunt labore veniam possimus
+            aspernatur at velit exercitationem reprehenderit saepe corporis earum, vel sunt rerum ipsa neque? Temporibus
+            vero nisi autem, quae eligendi necessitatibus quam porro deserunt ex, at nam nesciunt! Dolores itaque velit
+            dignissimos, provident aliquid quasi laudantium adipisci!</p>
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, tempora? Recusandae sapiente ut beatae
+            corrupti.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quis velit fugiat ipsum culpa, doloremque
+            reiciendis harum perferendis asperiores omnis labore temporibus, maxime incidunt eos cupiditate. Esse ipsa
+            sint repudiandae nobis iure temporibus! Facilis.</p>
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo praesentium placeat dolorem error
+            blanditiis nisi delectus temporibus aperiam! Rem eaque iste pariatur alias!</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero enim ex, pariatur cumque odit sed at excepturi
+            voluptas cum molestias accusamus placeat. Fugit pariatur sed exercitationem et reiciendis maiores animi.
+            Natus expedita nisi dolorem sapiente libero velit eveniet dolore officia! Optio ea aperiam quo fugit
+            assumenda consectetur ipsam velit necessitatibus! Culpa illo esse ipsum?</p>
+    </div>
+
+    <div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa excepturi eum corrupti nisi inventore quia
+            magni, est natus quibusdam sapiente sunt laborum dolor praesentium vel laudantium ipsam nemo molestiae
+            architecto.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, cumque?</p>
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo praesentium placeat dolorem error
+            blanditiis nisi delectus temporibus aperiam! Rem eaque iste pariatur alias!</p>
+    </div>
+-->
+</body>
+
+</html>
