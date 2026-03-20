@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<style>
+body{
+    background: rgb(239, 241, 249);
+    font-family: 'Times New Roman', Times, serif;
+}
+h1{
+    text-align: center;
+}
+ul{
+    width: 400px;
+    margin: 30px auto;
+    padding: 0;
+    list-style: none;
+}
+li{
+    padding: 10px 15px;
+    position: relative;
+}
+li:nth-child(odd){
+    background-color: #507388;
+}
+li:nth-child(even){
+    background-color: #799eb5;
+}
+li.done{
+    background: rgb(223, 223, 223);
+    text-decoration: line-through;
+}
+li::after{
+    content: "x";
+    color: rgb(129, 28, 49);
+    position: absolute;
+    right: 15px;
+}
+.icon{
+    margin-right: 10px;
+}
+
+
+
+
+
+</style>
+<body>
+    <h1>My To Do List</h1>
+    <ul>
+        <li><span class="icon">#</span>Hit The ym</li>
+        <li class="done"><span class="icon">$</span>Pay bills</li>
+        <li><span class="icon">#</span>Meet John</li>
+        <li><span class="icon">#</span>Buy eggs</li>
+        <li class="done"><span class="icon">$</span>Read a book</li>
+        <li><span class="icon">#</span>Organize office</li>
+        <li><span class="icon">#</span>Eat dinner</li>
+        <li><span class="icon">#</span>Buy apples</li>
+        <li><span class="icon">#</span>Meet George</li>
+        <li><span class="icon">#</span>Feed the cat</li>
+        <li class="done"><span class="icon">$</span>Write a letter</li>
+        <li><span class="icon">#</span>Run 1 km</li>
+
+
+
+
+
+    </ul>
+</body>
+</html>
