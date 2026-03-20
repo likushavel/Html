@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-сторінка із «живою» іконкою</title>
+    <style>
+        .heart{
+            width: 700px;
+            height: 500px;
+            margin: auto;
+        }
+        .heart img{
+            
+            transition: 4s;
+            position: absolute;
+        }
+        .red_heart{
+            opacity: 0;
+            width: 700px;
+            height: 500px;
+        }
+
+        .grey_heart{
+            width: 700px;
+            height: 500px;
+        }
+
+        .heart:hover .red_heart{
+            opacity: 1;
+        }
+        .heart:hover .grey_heart{
+            opacity: 0;
+        }
+    </style> 
+
+
+</head>
+
+<body>
+    <div class="heart">
+        <img class="grey_heart" src="../../../shared_resursed/grey.png" alt="grey heart">
+        <img class="red_heart" src="../../../shared_resursed/red.png" alt="red heart">
+    </div>
+</body>
+
+</html>
