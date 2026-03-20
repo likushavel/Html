@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #e3e6c3;
+        }
+        .img-conteiner {
+            text-align: center;
+            padding: 10px;
+            margin: 3px;
+        }
+
+        .hello {
+            margin: auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #ssd{
+            width: 100px;
+            height: 100px;
+            animation: ad-anim;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+        #ssf{
+            width: 150px;
+            height: 150px;
+            animation: ad-anim;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+        #ssg{
+            width: 150px;
+            height: 150px;
+            animation: aa-anim;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+        #ssh{
+            width: 100px;
+            height: 100px;
+            animation: aa-anim;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+        #ssj{
+            width: 100px;
+            height: 100px;
+        }
+        @keyframes ad-anim{
+            0% {
+                transform:rotate(0deg);
+            }
+            100%{
+                transform:rotate(-20deg);
+            }
+        }
+        @keyframes aa-anim{
+            0% {
+                transform:rotate(0deg);
+            }
+            100%{
+                transform:rotate(20deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hello">
+        <h1>HELLO, MY SITE!</h1>
+    </div>
+    <div class="img-conteiner">
+        <img id="ssd" src="../../lessons/resorsesforall/calc.png" alt="calulator">
+        <img id="ssf" src="../../lessons/resorsesforall/book.png" alt="book">
+        <img id="ssg" src="../../lessons/resorsesforall/paper.png" alt="paper">
+        <img id="ssh" src="../../lessons/resorsesforall/pallete.png" alt="pallete">
+    </div>
+    <div class="img-conteiner">
+        <img id="ssj" src="../../lessons/resorsesforall/pencil.png" alt="pencil">
+    </div>
+</body>
+
+</html>
