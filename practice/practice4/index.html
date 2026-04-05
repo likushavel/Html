@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocHTML-сторінка з прогрес-баром</title>
+    <style>
+        .line{
+            width: 200px;
+            height: auto;
+            border: solid #dfc17c 5px;
+        }
+        .cube{
+            height: 50px;
+            width: 50px;
+            background-color: #c8a239;
+            animation: cube-anim;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes cube-anim{
+            0%{
+                transform:translate(0,0);
+            }
+            100%{
+                transform:translate(150px,0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Загрузка</h1>
+    <div class="line">
+        <div class="cube"></div>
+    </div>
+</body>
+</html>
