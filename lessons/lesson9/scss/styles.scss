@@ -1,0 +1,50 @@
+@import "_variables";
+@import "_reset";
+@import "_mixins";
+
+body {
+    background-color: $color;
+    font-family: $font;
+    font-size: $font-size;
+}
+
+.container {
+    min-width: $min-width;
+    width: 80vw;
+    margin: auto;
+    text-align: center;
+    border: {
+        style: solid;
+        width: 2px;
+        color: black;
+        radius: 10px;
+    }
+}
+
+nav {
+    background-color: darken($color, 25%);
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li{
+        display: inline-block;
+    }
+    a{
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+        color: $color;
+        &:hover {
+            background-color: lighten($color, 25%);
+        }
+    }
+    
+}
+
+.danger {
+    @include bordered(#089394,3px);
+    @include important-text();
+    background-color: darken($color, 10%);
+}

@@ -1,0 +1,12 @@
+@mixin important-text {
+    color: red;
+    font{
+        size: 2em;
+        weight: bold;
+    }
+    text-transform: uppercase;
+}
+
+@mixin bordered($width: 1px, $color: black) {
+    border: $width solid $color;
+}
