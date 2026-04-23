@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="uk">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pr2</title>
+    <title>ProjectTabs</title>
     <style>
         * {
             box-sizing: border-box;
@@ -17,7 +16,7 @@
             padding: 30px;
         }
 
-        .tabs-container {
+        .wrapper-box {
             max-width: 1000px;
             margin: 0 auto;
             background: #555;
@@ -31,8 +30,7 @@
             display: none;
         }
 
-
-        .tabs-menu {
+        .nav-panel {
             width: 90px;
             flex-shrink: 0;
             display: flex;
@@ -40,7 +38,7 @@
             gap: 8px;
         }
 
-        .tabs-menu label {
+        .nav-panel label {
             display: block;
             padding: 12px 10px;
             background: #8c8c8c;
@@ -51,39 +49,39 @@
             font-size: 14px;
         }
 
-        .tabs-menu label:hover {
+        .nav-panel label:hover {
             background: #666;
         }
 
-        #tab1:checked~.tabs-menu label[for="tab1"],
-        #tab2:checked~.tabs-menu label[for="tab2"],
-        #tab3:checked~.tabs-menu label[for="tab3"] {
+        #page1:checked ~ .nav-panel label[for="page1"],
+        #page2:checked ~ .nav-panel label[for="page2"],
+        #page3:checked ~ .nav-panel label[for="page3"] {
             background: #444;
         }
 
-        .tabs-content {
+        .main-content {
             flex: 1;
             min-width: 0;
         }
 
-        .tab-content {
+        .section-block {
             display: none;
         }
 
-        #tab1:checked~.tabs-content .content1,
-        #tab2:checked~.tabs-content .content2,
-        #tab3:checked~.tabs-content .content3 {
+        #page1:checked ~ .main-content .block-one,
+        #page2:checked ~ .main-content .block-two,
+        #page3:checked ~ .main-content .block-three {
             display: flex;
             gap: 20px;
         }
 
-        .card {
+        .info-box {
             flex: 1;
             background: #555;
             color: white;
         }
 
-        .img-box {
+        .picture-frame {
             width: 100%;
             aspect-ratio: 350 / 220;
             background: #d9d9d9;
@@ -95,150 +93,102 @@
             margin-bottom: 12px;
         }
 
-        .card h3 {
+        .info-box h3 {
             margin: 0 0 10px;
             font-size: 16px;
         }
 
-        .card p {
+        .info-box p {
             margin: 0;
             font-size: 14px;
             line-height: 1.5;
         }
 
-        .tab-content {
+        .section-block {
             overflow-x: auto;
         }
 
-        .tab-content-inner {
+        .inner-flex {
             display: flex;
             gap: 20px;
             min-width: 0;
         }
     </style>
 </head>
-
 <body>
 
-    <div class="tabs-container">
-        <input type="radio" name="tabs" id="tab1" checked>
-        <input type="radio" name="tabs" id="tab2">
-        <input type="radio" name="tabs" id="tab3">
+    <div class="wrapper-box">
+        <input type="radio" name="tabs" id="page1" checked>
+        <input type="radio" name="tabs" id="page2">
+        <input type="radio" name="tabs" id="page3">
 
-        <div class="tabs-menu">
-            <label for="tab1">Tab 1</label>
-            <label for="tab2">Tab 2</label>
-            <label for="tab3">Tab 3</label>
+        <div class="nav-panel">
+            <label for="page1">Tab 1</label>
+            <label for="page2">Tab 2</label>
+            <label for="page3">Tab 3</label>
         </div>
-        <div class="tabs-content">
-            <div class="tab-content content1">
-                <div class="tab-content-inner">
-                    <div class="card">
-                        <div class="img-box"><img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk="></div>
-                        <h3>Header 1</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            In ultrices lorem id consectetur tempus. Mauris tempus.
-                            Nunc id justo iaculis, faucibus tortor non, blandit tortor.
-                        </p>
-                    </div>
 
-                    <div class="card">
-                        <div class="img-box"><img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk="></div>
-                        <h3>Header 2</h3>
-                        <p>
-                            Quisque id lectus et ipsum bibendum mattis vitae sagittis magna.
-                            Aenean accumsan turpis gravida feugiat molestie.
-                            Aliquam ornare nulla a velit vehicula.
-                        </p>
-                    </div>
+        <div class="main-content">
 
-                    <div class="card">
-                        <div class="img-box"><img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk="></div>
-                        <h3>Header 3</h3>
-                        <p>
-                            Mauris nec purus nec ligula euismod convallis.
-                            Vivamus ac tortor vel viverra tristique.
-                            Curabitur suscipit sit non mattis volutpat.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content content2">
-                <div class="tab-content-inner">
-                    <div class="card">
-                        <div class="img-box"><img
-                                src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk=">
+            <div class="section-block block-one">
+                <div class="inner-flex">
+                    <div class="info-box">
+                        <div class="picture-frame">
+                            <img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk=">
                         </div>
                         <h3>Header 1</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            In ultrices lorem id consectetur tempus. Mauris tempus.
-                            Nunc id justo iaculis, faucibus tortor non, blandit tortor.
-                        </p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices lorem id consectetur tempus. Mauris tempus. Nunc id justo iaculis, faucibus tortor non, blandit tortor.</p>
                     </div>
+                    <div class="info-box">
+                        <div class="picture-frame"><img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk="></div>
+                        <h3>Header 2</h3>
+                        <p>Quisque id lectus et ipsum bibendum mattis vitae sagittis magna. Aenean accumsan turpis gravida feugiat molestie. Aliquam ornare nulla a velit vehicula.</p>
+                    </div>
+                    <div class="info-box">
+                        <div class="picture-frame"><img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk="></div>
+                        <h3>Header 3</h3>
+                        <p>Mauris nec purus nec ligula euismod convallis. Vivamus ac tortor vel viverra tristique. Curabitur suscipit sit non mattis volutpat.</p>
+                    </div>
+                </div>
+            </div>
 
-                    <div class="card">
-                        <div class="img-box"><img
-                                src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk=">
+            <div class="section-block block-two">
+                <div class="inner-flex">
+                    <div class="picture-frame">
+                            <img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk=">
                         </div>
-                        <h3>Header 2</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            In ultrices lorem id consectetur tempus. Mauris tempus.
-                            Nunc id justo iaculis, faucibus tortor non, blandit tortor.
-                        </p>
-                    </div>
-
-                    <div class="card">
-                        <div class="img-box"><img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk="></div>
-                        <h3>Header 3</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            In ultrices lorem id consectetur tempus. Mauris tempus.
-                            Nunc id justo iaculis, faucibus tortor non, blandit tortor.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content content3">
-                <div class="tab-content-inner">
-                    <div class="card">
-                        <div class="img-box"><img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk="></div>
                         <h3>Header 1</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            In ultrices lorem id consectetur tempus. Mauris tempus.
-                            Nunc id justo iaculis, faucibus tortor non, blandit tortor.
-                        </p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices lorem id consectetur tempus. Mauris tempus. Nunc id justo iaculis, faucibus tortor non, blandit tortor.</p>
                     </div>
-
-                    <div class="card">
-                        <div class="img-box"><img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk="></div>
+                    <div class="info-box">
+                        <div class="picture-frame"><img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk="></div>
                         <h3>Header 2</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            In ultrices lorem id consectetur tempus. Mauris tempus.
-                            Nunc id justo iaculis, faucibus tortor non, blandit tortor.
-                        </p>
+                        <p>Quisque id lectus et ipsum bibendum mattis vitae sagittis magna. Aenean accumsan turpis gravida feugiat molestie. Aliquam ornare nulla a velit vehicula.</p>
                     </div>
-
-                    <div class="card">
-                        <div class="img-box"><img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk="></div>
+                    <div class="info-box">
+                        <div class="picture-frame"><img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk="></div>
                         <h3>Header 3</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            In ultrices lorem id consectetur tempus. Mauris tempus.
-                            Nunc id justo iaculis, faucibus tortor non, blandit tortor.
-                        </p>
-                    </div>
+                        <p>Mauris nec purus nec ligula euismod convallis. Vivamus ac tortor vel viverra tristique. Curabitur suscipit sit non mattis volutpat.</p>
                 </div>
             </div>
 
-        </div>
-    </div>
+            <div class="section-block block-three">
+                <div class="inner-flex">
+                    <div class="picture-frame">
+                            <img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk=">
+                        </div>
+                        <h3>Header 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices lorem id consectetur tempus. Mauris tempus. Nunc id justo iaculis, faucibus tortor non, blandit tortor.</p>
+                    </div>
+                    <div class="info-box">
+                        <div class="picture-frame"><img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk="></div>
+                        <h3>Header 2</h3>
+                        <p>Quisque id lectus et ipsum bibendum mattis vitae sagittis magna. Aenean accumsan turpis gravida feugiat molestie. Aliquam ornare nulla a velit vehicula.</p>
+                    </div>
+                    <div class="info-box">
+                        <div class="picture-frame"><img src="https://media.istockphoto.com/id/2187840550/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-404-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0.jpg?s=612x612&w=0&k=20&c=j-smi2aS9NJx5JZgUg8hZiwP-CFQuw21NwVWayxX6yk="></div>
+                        <h3>Header 3</h3>
+                        <p>Mauris nec purus nec ligula euismod convallis. Vivamus ac tortor vel viverra tristique. Curabitur suscipit sit non mattis volutpat.</p>
 
 </body>
 
