@@ -128,7 +128,7 @@ h1 {
 
 .products-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
@@ -281,16 +281,16 @@ h1 {
     background: #00913f;
 }
 
-.reviews {
+.reviews, .reviews1 {
     margin-top: 40px;
 }
 
-.reviews h2 {
+.reviews, .reviews1 h2 {
     font-size: 28px;
     margin-bottom: 20px;
 }
 
-.review-card {
+.review-card, .review-card1 {
     background: #fafafa;
     border: 1px solid #e5e5e5;
     border-radius: 10px;
@@ -298,13 +298,13 @@ h1 {
     margin-bottom: 15px;
 }
 
-.review-card h4 {
+.review-card, .review-card1 h4 {
     font-size: 18px;
     margin-bottom: 10px;
     color: #222;
 }
 
-.review-card p {
+.review-card, .review-card1 p {
     color: #555;
     line-height: 1.6;
     margin: 0;
